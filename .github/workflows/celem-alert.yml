@@ -31,3 +31,9 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CELEM_URL: "https://www.cep.pr.gov.br/Pagina/CELEM"
+
+      - name: Commit e push do estado
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Atualiza celem_state.json"
+          file_pattern: "celem_state.json"
